@@ -29,3 +29,7 @@ services:
         resource: '../../Command/*'
         tags: ['console.command']
         
+    AppBundle\EventListener\TestListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onPreUpdate }
+            

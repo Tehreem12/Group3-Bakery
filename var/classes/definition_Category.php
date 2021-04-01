@@ -9,6 +9,7 @@ Fields Summary:
 - name [input]
 - description [textarea]
 - active [checkbox]
+- image [image]
 */ 
 
 
@@ -17,7 +18,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Category',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1617201116,
+   'modificationDate' => 1617271555,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -88,7 +89,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -115,7 +116,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -137,7 +138,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -146,6 +147,30 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'visibleGridView' => false,
              'visibleSearch' => false,
              'defaultValueGenerator' => '',
+          )),
+          3 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
+             'fieldtype' => 'image',
+             'width' => '',
+             'height' => '',
+             'uploadPath' => '',
+             'queryColumnType' => 'int(11)',
+             'columnType' => 'int(11)',
+             'phpdocType' => '\\Pimcore\\Model\\Asset\\Image',
+             'name' => 'image',
+             'title' => 'Image',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
           )),
         ),
          'locked' => false,

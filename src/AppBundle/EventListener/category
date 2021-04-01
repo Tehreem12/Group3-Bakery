@@ -1,0 +1,15 @@
+category
+name - text
+--description - text area 
+status - check box
+type - object brick
+image - image
+
+product- 
+sku - text 
+name - text
+description - text area
+image - image
+relation() - m2n
+status - checkbox
+price - qnty val
