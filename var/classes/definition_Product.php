@@ -12,7 +12,7 @@ Fields Summary:
 - image [image]
 - weight [quantityValue]
 - price [quantityValue]
-- categoryType [manyToOneRelation]
+- categoryType [select]
 - manufacturedOn [date]
 - expiry [date]
 - productType [objectbricks]
@@ -24,7 +24,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Product',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1617268624,
+   'modificationDate' => 1617340580,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -265,47 +265,45 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           6 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
-             'fieldtype' => 'manyToOneRelation',
-             'width' => '',
-             'assetUploadPath' => '',
-             'relationType' => true,
-             'queryColumnType' => 
-            array (
-              'id' => 'int(11)',
-              'type' => 'enum(\'document\',\'asset\',\'object\')',
-            ),
-             'phpdocType' => '\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject',
-             'objectsAllowed' => true,
-             'assetsAllowed' => false,
-             'assetTypes' => 
-            array (
-            ),
-             'documentsAllowed' => false,
-             'documentTypes' => 
-            array (
-            ),
-             'classes' => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'fieldtype' => 'select',
+             'options' => 
             array (
               0 => 
               array (
-                'classes' => 'Category',
+                'key' => 'Cake',
+                'value' => 'Cake',
+              ),
+              1 => 
+              array (
+                'key' => 'Cookie',
+                'value' => 'Cookie',
               ),
             ),
-             'pathFormatterClass' => '',
+             'width' => '',
+             'defaultValue' => '',
+             'optionsProviderClass' => '\\AppBundle\\Dynamicselect\\OptionsProvider',
+             'optionsProviderData' => '',
+             'queryColumnType' => 'varchar',
+             'columnType' => 'varchar',
+             'columnLength' => 190,
+             'phpdocType' => 'string',
+             'dynamicOptions' => false,
              'name' => 'categoryType',
              'title' => 'Category Type',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
+             'defaultValueGenerator' => '',
           )),
           7 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
@@ -362,6 +360,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'allowedTypes' => 
             array (
               0 => 'MuffinFlavour',
+              1 => 'CookiePack',
             ),
              'maxItems' => '',
              'border' => false,
