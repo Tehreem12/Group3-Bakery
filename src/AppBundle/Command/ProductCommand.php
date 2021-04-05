@@ -18,12 +18,12 @@ use Pimcore\Model\DataObject\Import;
 use Pimcore\Model\DataObject\Log;
 
 
-class CategoryCommand extends AbstractCommand
+class ProductCommand extends AbstractCommand
 {
     protected function configure()
     {
         $this
-            ->setName('Pimcore:CsvCommand:Category')
+            ->setName('Pimcore:CsvCommand:Product')
             ->setDescription('imports csv files');
     }
 
@@ -37,9 +37,9 @@ class CategoryCommand extends AbstractCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $object = new \Pimcore\Model\DataObject\Import\Listing();
-        $object->setCondition('name = ?', 'Category');
+        $object->setCondition('name = ?', 'Product');
         // $object->addConditionParam('status = ?', false);
-       // $object->setLimit(2);
+        $object->setLimit(2);
 
         foreach ($object as $path) {
             $file = $path->getFile();
@@ -70,25 +70,50 @@ class CategoryCommand extends AbstractCommand
             fclose($h);
         }
         $data = json_decode($json);
-        foreach ($data as $cat) {
+        foreach ($data as $prod) {
         
 
-                if ($cat->name != NULL) {
+                if ($prod->sku != NULL) {
                    
-                    $object = new Pimcore\Model\DataObject\Category();
+                    $object = new Pimcore\Model\DataObject\Product();
                   
-                    $object->setKey($cat->key);
-                    $object->setParentId(4);
+                    $object->setKey($prod->key);
+                    $object->setParentId(6);
                     $object->setPublished(true);
-		     $image = \Pimcore\Model\Asset\Image::getByPath($cat->image);
+		     $image = \Pimcore\Model\Asset\Image::getByPath($prod->image);
 		  
-                 
-                    $object->setName($cat->name);
-                    $object->setDescription($cat->description);
-                    $object->setActive($cat->active);
-                    
+                    $object->setSku($prod->sku);
+                    $object->setName($prod->name);
+                    $object->setDescription($prod->description);
+            
+                    $object->setPrice(new DataObject\Data\QuantityValue($prod->price,$prod->Rs));
+                     $object->setWeight(new DataObject\Data\QuantityValue($prod->weight,$prod->kg));
        	     $object->setImage($image);
-      
+       	    
+       	       $objBrick = new DataObject\Objectbrick\Data\CookiePack($object); 
+       	       $objBrick->setPackOf($prod->packOf);
+       	       $object->getProductType()->setCookiePack($objBrick);
+       	       
+       	       $objBrick2 = new DataObject\Objectbrick\Data\Flavour($object); 
+       	       $objBrick2->setFlavour($prod->flavour);
+       	       $object->getProductType()->setFlavour($objBrick2);
+       	      
+       	      
+       	              
+       	      
+       	   //     $category = new \Pimcore\Model\DataObject\Category\Listing();
+                   //     $category->setCondition('name = ?', $prod->catrel);
+                   //     $category->setLimit(1);
+                   //     foreach ($category as $cat) {
+                            //p_r($cat2);die;
+                    //        $object->setCatrel($cat);
+                    //    }
+       	       $object->setCategoryType($prod->categoryType);
+       	    
+       	        $manufacturedOn = \Carbon\Carbon::parse($prod->manufacturedOn);
+		        $object->setManufacturedOn($manufacturedOn);
+		        $expiry = \Carbon\Carbon::parse($prod->expiry);
+		        $object->setExpiry($expiry);
                 	
        	     // $obj->save();
                     $object->save();

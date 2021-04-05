@@ -26,8 +26,8 @@ transform: translateY(-50%);
 
 body {
 font-family: 'Cabin', sans-serif;
-background-color: #f7f9fa;
-background-image: url('https://images7.alphacoders.com/349/349766.jpg');
+background-color: #d9d9d9;
+background-image: url('https://images.getbento.com/accounts/f4d66206fdf37d089dc50ee37f8dfbc9/mediausers/custom_fields_galleries/images/vGhAwAi0Qp6jVKVYOG37_95721Michael_Zaro_-_bw_101006_Zaro_Production_061.jpg');
 background-repeat: no-repeat;
 background-size: cover;
 
@@ -227,8 +227,8 @@ h1.b {
 }
  .myDiv {
   border: 5px outset #471f16;
-  background-color: #fff1d6;    
- 
+  background-color: #fdebd0 ;    
+  box-shadow: 5px 10px 8px #888888;
   text-align: center;
 }
  
@@ -240,12 +240,12 @@ h1.b {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
 </head>
 <body>
-<div styles ="background-image: url('https://images7.alphacoders.com/349/349766.jpg');"> 
+<div styles ="background-image: url('https://images.getbento.com/accounts/f4d66206fdf37d089dc50ee37f8dfbc9/mediausers/custom_fields_galleries/images/vGhAwAi0Qp6jVKVYOG37_95721Michael_Zaro_-_bw_101006_Zaro_Production_061.jpg');"> 
 
     <div class="myDiv">
             <div class="claim"><h1 class="b"> The Bakery Shop</h1>
 
-              <img src="MyAssets/bakerylog.jpeg" height="200" >
+           <!-- <img src="MyAssets/bakerylog.jpeg" height="200" > -->
       </div>     
             </div>
         </div>

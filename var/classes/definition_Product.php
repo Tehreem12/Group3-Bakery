@@ -24,7 +24,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Product',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1617340580,
+   'modificationDate' => 1617606701,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -233,7 +233,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultUnit' => NULL,
              'validUnits' => 
             array (
-              0 => 'Dollar',
+              0 => 'Rs',
             ),
              'decimalPrecision' => NULL,
              'autoConvert' => false,
@@ -295,7 +295,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -359,8 +359,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'phpdocType' => '\\Pimcore\\Model\\DataObject\\Objectbrick',
              'allowedTypes' => 
             array (
-              0 => 'MuffinFlavour',
-              1 => 'CookiePack',
+              0 => 'CookiePack',
+              1 => 'Flavour',
             ),
              'maxItems' => '',
              'border' => false,
