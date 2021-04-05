@@ -1,0 +1,3 @@
+"key","sku","name","price","Rs","weight","kg","image","flavour","categoryType","manufacturedOn","expiry"
+"Product1","1001","Red Velvet Cake","500","Rs","1","kg","/MyAssets/redVelvetCake.jpg","Red Velvet","Cake","01-04-2021","01-05-2021"
+"Product2","1002","ChocoChip Cookies","200","Rs","1","kg","/MyAssets/ChocoChipCookies.jpeg","chocolate","pack of 2","Cookie","01-04-2021","01-05-2021"
