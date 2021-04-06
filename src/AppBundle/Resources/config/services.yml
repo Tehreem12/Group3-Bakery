@@ -33,3 +33,9 @@ services:
         tags:
             - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onPreUpdate }
    
+    AppBundle\Security\Guard\WebserviceAuthenticator:
+        public: false
+        calls:
+            - [setLogger, ['@logger']]
+        tags:
+            - { name: monolog.logger, channel: security }

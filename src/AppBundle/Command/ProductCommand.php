@@ -118,8 +118,14 @@ class ProductCommand extends AbstractCommand
        	     // $obj->save();
                     $object->save();
 
-                    $msg = "Data Imported Successfully.\n";
-                   
+                    //$msg = "Data Imported Successfully.\n";
+
+                    $mail = new \Pimcore\Mail();
+                    $mail->addTo('kajalkhanna803@gmail.com');
+                    $mail->setSubject('Products Imported Sucessfully');
+                    $mail->setDocument('/importEmail');
+                    // $mail->setParams($params);
+                    $mail->send();
                   
                 }
 
